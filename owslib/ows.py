@@ -280,6 +280,10 @@ class BoundingBox(object):
                     self.maxx, self.maxy = xy[1], xy[0]
                 else:
                     self.maxx, self.maxy = xy[0], xy[1]
+        # If all xml methods fail, try elem text
+        if tmp is None:
+            self.maxx, self.maxy, self.minx, self.miny, crs_str = elem.text.split(",")
+            self.crs = crs.Crs(crs_str)
 
 
 class WGS84BoundingBox(BoundingBox):
