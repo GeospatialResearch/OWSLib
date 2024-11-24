@@ -238,6 +238,7 @@ class OperationsMetadata(object):
 class BoundingBox(object):
     """Initialize an OWS BoundingBox construct"""
     def __init__(self, elem, namespace=DEFAULT_OWS_NAMESPACE):
+        print("This should be shown")
         self.minx = None
         self.miny = None
         self.maxx = None
